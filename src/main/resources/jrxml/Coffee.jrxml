@@ -1,0 +1,116 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Coffee" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced95029-b569-4027-895c-af2843a4e088">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50.0" bold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18.0"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12.0" bold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12.0"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle backcolor="#E6DAC3">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<query language="SQL"><![CDATA[SELECT paises.pais.id, paises.pais.pais, paises.pais.capital, paises.pais.num_habitantes  
+FROM  paises.pais ]]></query>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pais"/>
+	</field>
+	<field name="pais" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="pais"/>
+		<property name="com.jaspersoft.studio.field.label" value="pais"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pais"/>
+	</field>
+	<field name="capital" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="capital"/>
+		<property name="com.jaspersoft.studio.field.label" value="capital"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pais"/>
+	</field>
+	<field name="num_habitantes" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="num_habitantes"/>
+		<property name="com.jaspersoft.studio.field.label" value="num_habitantes"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pais"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="136" splitType="Stretch">
+		<element kind="staticText" uuid="1a652692-054a-40f3-ade5-68d8da36626d" x="164" y="0" width="275" height="62" fontSize="47.0" vTextAlign="Middle" style="Title">
+			<text><![CDATA[INFORME]]></text>
+		</element>
+		<element kind="staticText" uuid="88d4231e-f014-4b0d-b871-1737ba63a1ae" x="164" y="62" width="251" height="22" fontName="Times New Roman" hTextAlign="Right" style="SubTitle">
+			<text><![CDATA[Listado de naciones]]></text>
+		</element>
+		<element kind="staticText" uuid="f0bfb1ea-a85a-47cd-a1a4-43f22b45e80f" x="164" y="94" width="265" height="42" fontSize="8.0" hTextAlign="Justified">
+			<text><![CDATA[En el siguiente informe encontraras un listado de paises con informacion revelante de cada país: nº de habitantes y capital]]></text>
+		</element>
+		<element kind="image" uuid="5d64e5b3-07bb-48ab-89dc-15c0c46bb19a" x="440" y="0" width="137" height="136">
+			<expression><![CDATA["coffee_stain.png"]]></expression>
+		</element>
+		<element kind="image" uuid="97e0c682-237a-42ed-a2f6-3154d93400df" x="-11" y="0" width="175" height="136">
+			<expression><![CDATA["naciones.png"]]></expression>
+		</element>
+	</title>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader height="16" splitType="Stretch">
+		<element kind="line" uuid="1a61a836-d137-48b1-ad67-6ff64600bf93" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1">
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</element>
+		<element kind="staticText" uuid="1ecf589f-e96f-40a6-a9f9-1ed6482b2942" x="0" y="0" width="138" height="15" forecolor="#736343" hTextAlign="Center" vTextAlign="Middle" style="Column header">
+			<text><![CDATA[IDENTIFICADOR]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="844a7342-21c7-4f89-916a-d08ad7da259e"/>
+		</element>
+		<element kind="staticText" uuid="afe7e9de-b9f2-47f9-9372-5743b9ffc3a0" x="138" y="0" width="138" height="15" forecolor="#736343" style="Column header">
+			<text><![CDATA[PAIS]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e60f86a-a6c8-460f-9bfc-76b0968ffeaf"/>
+		</element>
+		<element kind="staticText" uuid="8dfdbd51-fe6d-4e00-b2d2-96fed2aa0f3e" x="276" y="0" width="138" height="15" forecolor="#736343" style="Column header">
+			<text><![CDATA[CAPITAL]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11d6866c-20eb-47dc-91d0-b165f97c9a9f"/>
+		</element>
+		<element kind="staticText" uuid="461498b5-44e5-4dec-b960-52ae8bc2161a" x="414" y="0" width="138" height="15" forecolor="#736343" hTextAlign="Right" style="Column header">
+			<text><![CDATA[Nº HABITANTES]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c91e8605-dea3-4978-9c12-8d3f15c137e4"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<element kind="frame" uuid="a98495d8-3c8d-4fa0-81f5-30c3efc2f766" mode="Opaque" x="0" y="0" width="555" height="30" style="Row">
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<element kind="textField" uuid="cd3f2542-8c3d-448e-91ef-439e90445c76" x="0" y="0" width="138" height="30" textAdjust="StretchHeight" hTextAlign="Center" vTextAlign="Middle" style="Detail">
+					<expression><![CDATA[$F{id}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="844a7342-21c7-4f89-916a-d08ad7da259e"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</element>
+				<element kind="textField" uuid="673a7ba2-a8b7-41dc-917f-24ac2cf7166f" x="138" y="0" width="138" height="30" textAdjust="StretchHeight" vTextAlign="Middle" style="Detail">
+					<expression><![CDATA[$F{pais}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e60f86a-a6c8-460f-9bfc-76b0968ffeaf"/>
+				</element>
+				<element kind="textField" uuid="46e0a17d-1d39-4522-b52b-d61a7854fe57" x="276" y="0" width="138" height="30" textAdjust="StretchHeight" vTextAlign="Middle" style="Detail">
+					<expression><![CDATA[$F{capital}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="11d6866c-20eb-47dc-91d0-b165f97c9a9f"/>
+				</element>
+				<element kind="textField" uuid="55ed3172-ce22-4988-8559-a55b581d5ae7" x="414" y="0" width="138" height="30" textAdjust="StretchHeight" hTextAlign="Right" vTextAlign="Middle" style="Detail">
+					<expression><![CDATA[$F{num_habitantes}==null?0: $F{num_habitantes}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c91e8605-dea3-4978-9c12-8d3f15c137e4"/>
+				</element>
+			</element>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="25" splitType="Stretch">
+		<element kind="frame" uuid="183682bc-d976-4756-83e0-6625a3f98ed1" mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF">
+			<element kind="textField" uuid="0193f9b3-1559-491a-8580-b6988863b6a1" x="410" y="100" width="40" height="20" forecolor="#736343" fontSize="10.0" evaluationTime="Report" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+			</element>
+			<element kind="textField" uuid="d00b105e-494b-418b-8ac9-8b1b4824f4f0" x="453" y="0" width="80" height="20" forecolor="#736343" fontSize="10.0" bold="false" hTextAlign="Right" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+			</element>
+			<element kind="textField" uuid="0616f3fe-0354-456f-8911-ec30ec51a5ae" x="22" y="1" width="197" height="20" forecolor="#736343" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[new java.util.Date()]]></expression>
+			</element>
+		</element>
+	</pageFooter>
+	<summary splitType="Stretch"/>
+</jasperReport>
